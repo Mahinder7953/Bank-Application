@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexStyle.css">
+    <title>ACCOUNTS</title>
+</head>
+
+<body>
+    <h1>ACCOUNTS LIST</h1>
+    <a href="/add">CREATE NEW ACCOUNT</a>
+    <form th:action="@{/}" method="get">
+        <input type="number" name="accountNumber" placeholder="Search by Account Number">
+    <button type="submit">Search</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>A/C NUMBER</th>
+                <th>HOLDER NAME</th>
+                <th>PIN</th>
+                <th>BALANCE</th>
+                <th>DEPOSIT</th>
+                <th>WITHDRAW</th>
+                <th>TRANSFER</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ac : ${accounts}">
+                <!-- <td th:text="${ac.id}"></td> -->
+                <td th:text="${ac.number}"></td>
+                <td th:text="${ac.name}"></td>
+                <td th:text="${ac.pin}"></td>
+                <td th:text="${ac.balance}"></td>
+                <td><a th:href="@{/deposit/{number}(number = ${ac.number})}">DEPOSIT</a></td>
+                <td><a th:href="@{/withdraw/{number}(number = ${ac.number})}">WITHDRAW</a></td>
+                <td><a th:href="@{/transfer/{number}(number = ${ac.number})}">TRANSFER</a></td>
+                <td><a th:href="@{/update/{number}(number = ${ac.number})}">UPDATE</a></td>
+                <td><a th:href="@{/delete/{id}(id = ${ac.id})}">DELETE</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+<!--  -->

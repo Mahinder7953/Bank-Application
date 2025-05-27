@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http:.www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/withdraw.css}">
+    <title>WITHDRAW</title>
+</head>
+<body>
+    <h1>Withdraw</h1>
+    <form th:action="@{/withdraw/{number}(number = ${accountDetail.number})}" method="post" th:object="${accountDetail}">
+        <input type="hidden" name="number" id="number" th:field="*{number}" readonly><br>
+
+        <input type="hidden" th:field="*{pin}"><br>
+
+        <label for="name">NAME</label>
+        <input type="text" name="name" id="name" th:field="*{name}" readonly><br>
+
+
+        <label for="balance">BALANCE</label>
+        <input type="number" name="balance" id="balance" th:field="*{balance}" readonly><br>
+
+        <label for="amount">AMOUNT</label>
+        <input type="number" name="amount" id="amount" required min="1"><br>
+
+        <input type="submit" value="WITHDRAW">
+
+    </form>
+    <a href="/">BACK</a>
+</body>
+</html>

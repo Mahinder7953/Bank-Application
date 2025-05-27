@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http:.www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/update.css}">
+    <title>Update details</title>
+</head>
+<body>
+    <h1>Update</h1>
+    <form th:action="@{/update/{number}(number = ${accountDetail.number})}" method="post" th:object="${accountDetail}">
+
+        <label for="number">A/C NUMBER</label>
+        <input type="text" name="number" id="number" th:field="*{number}" readonly><br>
+
+        <label for="name">NAME</label>
+        <input type="text" name="name" id="name" th:field="*{name}" ><br>
+
+        <label for="pin">PIN</label>
+        <input type="number" th:field="*{pin}"><br>
+
+        <label for="balance">BALANCE</label>
+        <input type="number" name="balance" id="balance" th:field="*{balance}"><br>
+
+        <input type="submit" value="submit">
+
+    </form>
+    <a href="/">BACK</a>
+</body>
+</html>

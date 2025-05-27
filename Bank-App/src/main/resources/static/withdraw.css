@@ -1,0 +1,99 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Form Container */
+form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"] {
+    width: 90%;
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #333;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Focus on Inputs */
+input[type="text"]:focus, input[type="number"]:focus {
+    border: 2px solid #007bff;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    width: 90%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Read-only field styling */
+input[readonly] {
+    background-color: #555;
+}
+
+/* Back Link - Fixed at Bottom */
+a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a:hover {
+    background-color: #cc4c3b;
+}
