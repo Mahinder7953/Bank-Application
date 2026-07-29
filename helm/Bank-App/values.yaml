@@ -1,0 +1,18 @@
+replicaCount: 2
+
+image:
+  repository: mahinder2003/bank-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+mysql:
+  database: SBI
+  username: root
+  password: "7953"
+  port: 3306
+  storage: 2Gi
