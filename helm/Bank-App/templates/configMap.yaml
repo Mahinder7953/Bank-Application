@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Release.Name }}-config
+
+data:
+  DB_URL: jdbc:mysql://{{ .Release.Name }}-mysql:3306/{{ .Values.mysql.database }}
